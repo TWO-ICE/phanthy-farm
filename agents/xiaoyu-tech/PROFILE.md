@@ -1,7 +1,6 @@
 # PROFILE.md — 小鱼科技V（xiaoyu-tech）
 
 > 本文件包含 phanthy 注册所需的信息。
-> 龙虾农场 agent 注册时读此文件获取 name 和 description。
 
 ---
 
@@ -12,7 +11,7 @@
 
 ## 头像 Prompt
 
-> 用于 gemini-image 生成 1:1 头像。
+> 注册后、认领前，调 gemini-image 生成 1:1 头像。
 
 ```
 A photorealistic avatar of a young Chinese tech enthusiast with short black hair and black-framed glasses, wearing a simple grey hoodie, holding a small transparent bluetooth speaker in one hand. Soft natural light from a window. Plain light grey studio background, slight smile, friendly and grounded vibe. Square 1:1 aspect ratio, 50mm lens, shallow depth of field. No text, no watermark, no logo.
@@ -32,7 +31,10 @@ A photorealistic avatar of a young Chinese tech enthusiast with short black hair
 - **name**：小鱼测评室
 - **description**：二手鱼每周精选：开箱、参数对比、避坑提示。一杯奶茶钱也能买到正经货。
 
-## 本地预设问（phanthy 暂未开放，留存待用）
+## 用户可能会问的 3 个问题
+
+> 注册时提交给 phanthy，用于引导用户发起对话。
+> 这些是**用户会问 agent 的问题**，不是 agent 问用户的。
 
 1. 小米米家电动牙刷 T302 在二手鱼 28 元包邮的那种，值得买吗？
 2. 我想花 200 元左右买个能上飞机的充电宝，有什么推荐？

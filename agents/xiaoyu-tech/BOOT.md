@@ -23,7 +23,7 @@ cd phanthy-farm
 读取以下文件，**完整阅读，不要跳过**：
 
 1. `agents/xiaoyu-tech/SOUL.md` — 你的角色 DNA（你是谁、怎么说话、怎么回私信/评论）
-2. `agents/xiaoyu-tech/PROFILE.md` — 你的注册信息（昵称、Bio）
+2. `agents/xiaoyu-tech/PROFILE.md` — 你的注册信息（昵称、Bio、头像prompt、预设问）
 3. `agents/xiaoyu-tech/CREDENTIALS.md` — 你的凭证（api_key）
 
 读取后告诉我：
@@ -33,12 +33,54 @@ cd phanthy-farm
 
 ## Step 3：注册（仅当 api_key 为空时）
 
-如果 CREDENTIALS.md 里 api_key 为空：
+如果 CREDENTIALS.md 里 api_key 为空，按顺序执行以下 4 件事：
 
-1. 用 PROFILE.md 里的 name 和 description 调用 phanthy 注册接口
-2. 把返回的 api_key 和 claim_url 写入 CREDENTIALS.md
-3. **停下来**，把 claim_url 展示给我（owner），等我手动认领
-4. 认领后继续 Step 4
+### 3a. 注册 agent
+
+用 PROFILE.md 里的 name 和 description 调用 phanthy 注册接口：
+
+```bash
+curl -X POST https://phanthy.com/api/v1/openclaw/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"小鱼淘科技","description":"二手鱼老炮。每天拆 9.9 元的命，告诉你 200 元的漏该不该捡。"}'
+```
+
+把返回的 api_key 写入 CREDENTIALS.md。
+
+### 3b. 生成头像
+
+调 **gemini-image skill** 生成一张 1:1 社交媒体头像，用 PROFILE.md 里的头像 prompt：
+
+```
+A photorealistic avatar of a young Chinese tech enthusiast with short black hair and black-framed glasses, wearing a simple grey hoodie, holding a small transparent bluetooth speaker in one hand. Soft natural light from a window. Plain light grey studio background, slight smile, friendly and grounded vibe. Square 1:1 aspect ratio, 50mm lens, shallow depth of field. No text, no watermark, no logo.
+```
+
+保存为 `agents/xiaoyu-tech/avatar.png`。
+
+### 3c. 汇总展示给 owner
+
+**停下来**，把以下信息**全部**展示给我（owner）：
+
+```
+🎉 注册完成！请确认以下信息后认领：
+
+📋 昵称：小鱼淘科技
+📝 简介：二手鱼老炮。每天拆 9.9 元的命，告诉你 200 元的漏该不该捡。
+🖼️ 头像：[展示生成的头像图片]
+
+❓ 用户可能会问的 3 个问题：
+  1. 小米米家电动牙刷 T302 在二手鱼 28 元包邮的那种，值得买吗？
+  2. 我想花 200 元左右买个能上飞机的充电宝，有什么推荐？
+  3. 9.9 元包邮的礼盒类周边是不是都智商税？
+
+🔗 认领链接：[claim_url]
+
+👆 请点击上方链接完成认领，认领后告诉我"已认领"。
+```
+
+### 3d. 等待认领
+
+等我（owner）手动打开 claim_url 完成认领并回复"已认领"后，继续 Step 4。
 
 ## Step 4：进入心跳循环
 
