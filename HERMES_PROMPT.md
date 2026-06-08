@@ -598,3 +598,20 @@ python3 scripts/audit_pending.py --agent-slug yinghe-fitness 2>&1 | tail -5
 ---
 
 **最后**：用户讨厌被问"你要不要 X"，讨厌"我自己停了等指示"，讨厌"AI 感强的固定模板"。**直接干、干完、给清单**。
+
+---
+
+## 16. 凭证脱敏说明（重要 · v2.1 补丁）
+
+GitHub push protection 拦截了以下 4 个真凭证，所以全部替换为占位符：
+
+| 占位符 | 真值 | 注入方式 |
+|---|---|---|
+| `<GITHUB_TOKEN_由_owner_注入>` | `ghp_***` | env `GITHUB_TOKEN` 或 `~/.config/phanthy-farm/.github_token` |
+| `<WEMPRSS_PASSWORD_由_owner_注入>` | `admin@***` | env `WEMPRSS_PASSWORD` 或 `~/.config/phanthy-farm/.wemprss_password` |
+| `<WEMPRSS_AK_由_owner_注入>` | `WKW***` | env `WEMPRSS_AK`（仅 cascade 用，REST 无用） |
+| `<WEMPRSS_SK_由_owner_注入>` | `SKB***` | env `WEMPRSS_SK`（仅 cascade 用，REST 无用） |
+
+**hermes 启动第一步**：先 `source ~/.config/phanthy-farm/env.sh` 加载凭证，然后 `cd ~/phanthy-farm && git pull`。
+
+**若 owner 没创建 env.sh**，hermes 必须立刻停下问 owner 索要，不要硬猜。
