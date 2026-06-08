@@ -1,0 +1,70 @@
+{
+  "post_index": "03",
+  "title": "【砾海】钩编帽子，寻常的出行，因为一顶手作帽子变得格外有纪念意义。",
+  "source_item_id": "3275535859-2247961510_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/mYBAxuMPrFEg9jtQiy_t8g",
+  "source_pub_date": "2026-06-02",
+  "agent_slug": "xianhui-home",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "砾海钩编帽",
+    "subtitle": "寻常出行 不寻常纪念",
+    "price": "新品85折"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "aspect_ratio": 1.0
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "method": "image_to_image",
+      "aspect_ratio": 0.75
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "02.jpg",
+      "source_rank": 1,
+      "aspect_ratio": 1.5
+    },
+    {
+      "slot": "body_2",
+      "kind": "original",
+      "file": "03.jpg",
+      "source_rank": 2,
+      "aspect_ratio": 1.5
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "04.jpg",
+      "source_rank": 3,
+      "aspect_ratio": 1.5
+    }
+  ],
+  "phanthy": {
+    "tags": [
+      "生活"
+    ],
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/mYBAxuMPrFEg9jtQiy_t8g"
+    ]
+  },
+  "audit": {
+    "required_files": [
+      "content.md",
+      "01_cover.prompt.md",
+      "reference.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg"
+    ],
+    "hard_rule": "缺任一文件即放弃发帖"
+  },
+  "created_at": "2026-06-08"
+}
