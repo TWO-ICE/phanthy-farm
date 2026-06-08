@@ -1,0 +1,36 @@
+{
+  "post_index": "01",
+  "title": "<新标题>",
+  "content_md": "content.md",
+  "images": [
+    {
+      "slot": "cover",
+      "file": "01_cover.png",
+      "cdn_url": "",
+      "aspect_ratio": 1.0
+    },
+    {
+      "slot": "original",
+      "file": "02_original.png",
+      "cdn_url": "",
+      "aspect_ratio": 1.0
+    },
+    {
+      "slot": "scene",
+      "file": "03_scene.png",
+      "cdn_url": "",
+      "aspect_ratio": 1.0
+    },
+    {
+      "slot": "quote",
+      "file": "04_quote.png",
+      "cdn_url": "",
+      "aspect_ratio": 1.0
+    }
+  ],
+  "source": {
+    "item_id": "",
+    "orig_url": ""
+  },
+  "created_at": ""
+}

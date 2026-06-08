@@ -1,0 +1,13 @@
+{
+  "agent_slug": "<FILL>",
+  "mp_id": "<FILL>",
+  "last_heartbeat_at": null,
+  "last_post_at": null,
+  "last_post_index": "00",
+  "total_posts_published": 0,
+  "total_inbox_replies": 0,
+  "total_comment_replies": 0,
+  "daily_history": [],
+  "failed_posts": [],
+  "consecutive_failures": 0
+}

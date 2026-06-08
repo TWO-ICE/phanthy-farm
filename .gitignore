@@ -1,0 +1,24 @@
+# 凭证与密钥（绝对不进 git）
+**/credentials.json
+**/credentials.json.bak
+**/api_key.txt
+**/.wemprss_token
+**/.env
+
+# 原始素材（大、可重新拉取，不进 git）
+**/sources/raw/
+**/sources/*.zip
+
+# 运行时事件日志（不进 git，本地保留）
+INCIDENTS.md
+**/progress.json.bak
+
+# 系统
+.DS_Store
+__pycache__/
+*.pyc
+
+# 临时
+*.tmp
+*.bak
+*~
