@@ -1,60 +1,54 @@
-# 01_cover · 封面 Prompt（策略 C：1 推荐 + 2 备选）
+# 01_cover · 封面 Prompt（JSON 模板 · 策略 C:3:4 图生图 + 中文标题）
 
-> 本文件用于龙虾农场 OpenClaw 调 `gemini-image` skill 生成 post_01 封面。
-> 默认用 **#1 推荐**；如生成失败或不满意，可回退到 #2 或 #3。
-> **严禁**：在图中叠加中文文字（AI 叠中文极易翻车，标题由 phanthy 平台在卡片上单独渲染）。
+> 本文件是 **JSON 结构化模板**，agent 读取后填入占位符 → 调 gemini-image。
+> **method**: 图生图，参考图 = `reference.jpg`
+> **aspect_ratio**: 3:4 竖版（适配 phanthy 移动端 feed 卡片）
+> **占位符**: `{TITLE}` / `{SUBTITLE}` / `{PRICE}` 已预填
 
----
-
-## #1 · 推荐（默认）
-
-**用途**：高对比度、强价格冲击力，符合"二手鱼捡漏"DNA。
-
+```json
+{
+  "version": "2.0",
+  "method": "image_to_image",
+  "aspect_ratio": "3:4",
+  "reference_image": "reference.jpg",
+  "negative_prompt": "blurry, distorted Chinese characters, wrong text, English text instead of Chinese, watermark, logo, busy decoration, frame border",
+  "style": {
+    "background": "extracted and softly blurred from reference image, 40% blur for clean text overlay area",
+    "mood": "exciting second-hand deal discovery, urgent and clickable, Xianyu marketplace vibe",
+    "color_grade": "warm beige + cool steel grey, slightly desaturated, kraft paper texture overlay on edges",
+    "lighting": "soft top-left directional light, product hero shot feel"
+  },
+  "text": {
+    "title": {
+      "content": "28元包邮的小米电动牙刷",
+      "position": "top-center, on white card with subtle shadow",
+      "size": "extra-large, occupies top 30%",
+      "color": "bold black text on clean white card background",
+      "font_style": "modern Chinese bold sans-serif (黑体/思源黑体风), high impact",
+      "max_chars": 22
+    },
+    "subtitle": {
+      "content": "这波漏到底值不值？",
+      "position": "below title, smaller card",
+      "size": "medium",
+      "color": "dark grey on white",
+      "font_style": "Chinese regular sans-serif"
+    },
+    "price_tag": {
+      "content": "28元",
+      "position": "bottom-right, prominent badge",
+      "size": "extra-large, star element",
+      "color": "white text on bright red/orange (#FF4500) circular or star-shaped badge with thick white border",
+      "font_style": "Chinese bold display font, slight 3D shadow effect"
+    }
+  },
+  "composition": {
+    "product_image": "use reference image as central element, occupying middle 50%",
+    "decorative_elements": "small subtle Xianyu/二手鱼 fish icon watermark (top-right corner, low opacity), price tag string detail"
+  },
+  "post_generation_check": {
+    "verify_chinese_text": "if Chinese text is distorted or wrong characters, regenerate with simpler text",
+    "retry_strategy": "on failure, simplify text content, then try again; max 3 retries before abandoning"
+  }
+}
 ```
-A product hero shot of a single white Xiaomi Mijia electric toothbrush (model T302) laying diagonally on a textured concrete-grey surface. Beside it, three loose coin-cell decorations and a small kraft paper tag with the number "28" printed in bold black marker. Soft directional light from top-left casting subtle shadow. Color grading: warm beige and cool steel grey, slightly desaturated for a secondhand-market vibe. Clean minimal composition, 1:1 square aspect ratio, photorealistic, 50mm lens look, shallow depth of field. No text, no watermark, no logo overlay.
-```
-
-**关键控制点**：
-- 1:1 正方形（phanthy 卡片默认比例）。
-- 物品斜放 = "随手一拍"的二手感。
-- 数字 "28" 在小纸片上 = AI 写阿拉伯数字基本不翻车，但中文必须避开。
-- 不要 emoji、不要品牌 logo。
-
----
-
-## #2 · 备选（情绪向）
-
-**用途**：偏生活场景，强调"一杯奶茶钱"的代入感。
-
-```
-A flat-lay still life photograph, top-down view, on a warm wooden desk. A single white Xiaomi electric toothbrush lies horizontally. Next to it: a half-empty cup of milk tea with a paper straw, a small notebook, and a smartphone showing a secondhand marketplace app interface (blurred, generic). Warm natural window light from the right, soft shadow. Color palette: cream, light wood, soft white. Square 1:1 aspect ratio, lifestyle photography aesthetic, shallow depth of field. No text overlay, no watermark, no readable brand logo.
-```
-
-**关键控制点**：
-- 1:1 正方形。
-- 借"奶茶 + 牙刷"两个物件讲"奶茶钱"的价格锚，但完全无字。
-- lifestyle 调性，适合周末发。
-
----
-
-## #3 · 备选（科技感向）
-
-**用途**：偏硬件审美，强调"参数党也能上"。
-
-```
-A clean product shot of a single white Xiaomi electric toothbrush standing upright on a matte black glossy surface, reflection visible. A subtle spotlight from above, dark gradient background. A small laser-engraved text "T302" visible on the toothbrush body. Composition: centered, minimalist, high-end tech aesthetic. Square 1:1 aspect ratio, studio lighting, photorealistic, 85mm lens. No overlay text, no watermark, no extra decoration.
-```
-
-**关键控制点**：
-- 1:1 正方形。
-- 黑色高光底 + 反射 = 数码博主标配视觉。
-- "T302" 是型号字，英文+数字组合 AI 写起来比中文稳。
-
----
-
-## 调度建议
-
-- OpenClaw agent 读到本文件后，**默认用 #1** 调 `gemini-image`。
-- 生成成功 → 保存为 `01_cover.png` 与本文件同目录。
-- 生成失败 3 次 → 回退 #2，再失败 → #3，再失败 → 整篇 post_01 跳过本轮心跳。
-- 生成结果**必须为 1:1 PNG 或 JPG**，分辨率 ≥ 1024×1024。

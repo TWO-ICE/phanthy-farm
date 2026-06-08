@@ -1,43 +1,54 @@
-# 03_cover · 封面 Prompt（策略 C：1 推荐 + 2 备选）
+# 01_cover · 封面 Prompt（JSON 模板 · 策略 C:3:4 图生图 + 中文标题）
 
-> 龙虾农场 OpenClaw 调 `gemini-image` 默认用 **#1**。
-> **严禁**叠加中文文字。
+> 本文件是 **JSON 结构化模板**，agent 读取后填入占位符 → 调 gemini-image。
+> **method**: 图生图，参考图 = `reference.jpg`
+> **aspect_ratio**: 3:4 竖版（适配 phanthy 移动端 feed 卡片）
+> **占位符**: `{TITLE}` / `{SUBTITLE}` / `{PRICE}` 已预填
 
----
-
-## #1 · 推荐（默认）
-
-**用途**：突出"透明探索版"科技感 + 价格冲击力，符合"硬核数码捡漏"DNA。
-
+```json
+{
+  "version": "2.0",
+  "method": "image_to_image",
+  "aspect_ratio": "3:4",
+  "reference_image": "reference.jpg",
+  "negative_prompt": "blurry, distorted Chinese characters, wrong text, English text instead of Chinese, watermark, logo, busy decoration, frame border",
+  "style": {
+    "background": "extracted and softly blurred from reference image, 40% blur for clean text overlay area",
+    "mood": "exciting second-hand deal discovery, urgent and clickable, Xianyu marketplace vibe",
+    "color_grade": "warm beige + cool steel grey, slightly desaturated, kraft paper texture overlay on edges",
+    "lighting": "soft top-left directional light, product hero shot feel"
+  },
+  "text": {
+    "title": {
+      "content": "212W充电宝跌到200多",
+      "position": "top-center, on white card with subtle shadow",
+      "size": "extra-large, occupies top 30%",
+      "color": "bold black text on clean white card background",
+      "font_style": "modern Chinese bold sans-serif (黑体/思源黑体风), high impact",
+      "max_chars": 22
+    },
+    "subtitle": {
+      "content": "有刻字你能接受吗",
+      "position": "below title, smaller card",
+      "size": "medium",
+      "color": "dark grey on white",
+      "font_style": "Chinese regular sans-serif"
+    },
+    "price_tag": {
+      "content": "200多",
+      "position": "bottom-right, prominent badge",
+      "size": "extra-large, star element",
+      "color": "white text on bright red/orange (#FF4500) circular or star-shaped badge with thick white border",
+      "font_style": "Chinese bold display font, slight 3D shadow effect"
+    }
+  },
+  "composition": {
+    "product_image": "use reference image as central element, occupying middle 50%",
+    "decorative_elements": "small subtle Xianyu/二手鱼 fish icon watermark (top-right corner, low opacity), price tag string detail"
+  },
+  "post_generation_check": {
+    "verify_chinese_text": "if Chinese text is distorted or wrong characters, regenerate with simpler text",
+    "retry_strategy": "on failure, simplify text content, then try again; max 3 retries before abandoning"
+  }
+}
 ```
-A product hero shot of a single high-tech transparent power bank with a color LCD display visible on the front, lying diagonally on a matte black surface. Visible internal circuitry and battery cells through the transparent shell. Beside it: a small kraft paper tag with the number "228" printed in bold black marker. Subtle accent lighting from the side giving a slight cyan glow to the transparent shell. Dark gradient background. 1:1 square aspect ratio, photorealistic, 50mm lens, shallow depth of field, premium tech product photography. No text overlay, no watermark, no readable brand logo.
-```
-
-**关键控制点**：1:1 / 透明外壳 + 可见电芯 = 探索版视觉特征 / "228" 写在小纸片上 / 不要可识别的小米 logo。
-
----
-
-## #2 · 备选（场景向）
-
-**用途**：办公桌一角的实拍感，强调"出差党"使用场景。
-
-```
-A flat-lay still life photograph, top-down view, on a clean modern wooden desk. A transparent power bank with color LCD display, a laptop (lid closed, generic), a smartphone, and a single USB-C cable. Warm natural window light from the right. Color palette: warm wood, cool tech grey, subtle cyan accent from the power bank LCD. Square 1:1 aspect ratio, lifestyle tech photography aesthetic, shallow depth of field. No text overlay, no watermark, no readable brand logo.
-```
-
----
-
-## #3 · 备选（极简向）
-
-**用途**：突出"科技工艺品"质感，纯黑底 + 反射光。
-
-```
-A single transparent power bank with color LCD standing upright on a glossy black reflective surface, mirror-like reflection visible. A subtle spotlight from above, deep black gradient background. The LCD screen glows softly showing generic battery iconography. Composition: centered, minimalist, high-end tech aesthetic. Square 1:1 aspect ratio, studio lighting, photorealistic, 85mm lens. No overlay text, no watermark, no readable brand logo.
-```
-
----
-
-## 调度建议
-
-- 默认 **#1**。失败回退 #2 → #3 → 跳过本篇。
-- 输出 1:1 PNG/JPG，≥ 1024×1024。
