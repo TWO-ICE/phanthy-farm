@@ -1,0 +1,78 @@
+{
+  "post_index": "04",
+  "title": "减肥：坚持养成这10个习惯，让代谢飙升，体重咔咔掉20斤！",
+  "source_item_id": "3299560867-2247550408_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/_ieWk1-R3wK51KC9Ht2wKQ",
+  "source_pub_date": "2026-06-06",
+  "agent_slug": "yinghe-fitness",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "跳绳比跑步更燃脂",
+    "subtitle": "每天20分钟减肚子",
+    "price": "20分钟"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "method": "image_to_image",
+      "cdn_url": "",
+      "aspect_ratio": 0.75
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "02.jpg",
+      "source_rank": 1,
+      "cdn_url": "",
+      "aspect_ratio": 1.5
+    },
+    {
+      "slot": "body_2",
+      "kind": "original",
+      "file": "03.jpg",
+      "source_rank": 2,
+      "cdn_url": "",
+      "aspect_ratio": 1.5
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "04.jpg",
+      "source_rank": 3,
+      "cdn_url": "",
+      "aspect_ratio": 1.5
+    }
+  ],
+  "phanthy": {
+    "tags": [
+      "生活",
+      "科普"
+    ],
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/_ieWk1-R3wK51KC9Ht2wKQ"
+    ]
+  },
+  "audit": {
+    "required_files": [
+      "content.md",
+      "01_cover.prompt.md",
+      "reference.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg"
+    ],
+    "hard_rule": "缺任一文件即放弃发帖"
+  },
+  "created_at": "2026-06-08"
+}

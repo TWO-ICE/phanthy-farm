@@ -144,12 +144,38 @@ def parse_pubdate(s: str) -> str:
     except Exception:
         return ""
 
-def proxy_download(img_url: str, dst: Path):
+def proxy_download(img_url: str, dst: Path, crop_bottom: float = 0.20):
+    """
+    下载图片并裁剪下方 crop_bottom 比例（默认 20%），用于去掉公众号水印。
+    crop_bottom=0 表示不裁剪。
+    """
     proxy = f"{WEMPRSS_BASE}/api/v1/wx/tools/image/proxy?" + \
             urllib.parse.urlencode({"url": img_url, "output_format": "jpeg"})
     req = urllib.request.Request(proxy, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=30) as resp:
-        dst.write_bytes(resp.read())
+        raw_bytes = resp.read()
+
+    if crop_bottom <= 0:
+        dst.write_bytes(raw_bytes)
+        return
+
+    # 裁剪下方 crop_bottom 区域
+    try:
+        from PIL import Image
+        import io
+        im = Image.open(io.BytesIO(raw_bytes))
+        w, h = im.size
+        crop_h = int(h * crop_bottom)
+        # 保留上方 (0, 0) 到 (w, h - crop_h)
+        cropped = im.crop((0, 0, w, h - crop_h))
+        # 保存为 JPEG 格式
+        if cropped.mode in ("RGBA", "P"):
+            cropped = cropped.convert("RGB")
+        cropped.save(dst, "JPEG", quality=92, optimize=True)
+    except Exception as e:
+        # PIL 不可用或图片损坏 → 保留原图
+        sys.stderr.write(f"[warn] crop failed for {dst.name}: {e}, saving original\n")
+        dst.write_bytes(raw_bytes)
 
 def main():
     ap = argparse.ArgumentParser()

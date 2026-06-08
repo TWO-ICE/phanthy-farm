@@ -55,10 +55,15 @@ def audit(post_dir: Path, require_cdn: bool) -> dict:
         if "深度启发自" not in text:
             result["errors"].append("缺少原文溯源链接")
             result["ok"] = False
-        # 4 层标记词校验
+        # 标记词校验（改为 warning，不阻塞）
+        # 新规范（v2）：用 "3 步洗稿法" 自由扩写，不强制 4 层标记词
+        markers_found = []
         for marker in ["**观点：**", "**数据支撑：**", "**真实案例：**", "**落地启示：**"]:
             if marker not in text:
-                result["warnings"].append(f"缺标记词: {marker}")
+                markers_found.append(False)
+        # 如果完全没找到任何标记词，给个温和 warning（不是必须结构）
+        if not any(m in text for m in ["**观点：**", "**数据支撑：**", "**真实案例：**", "**落地启示：**"]):
+            result["warnings"].append("未使用 4 层模板（v2 新规范：自由扩写即可）")
 
     # 3. CDN 校验（可选，发帖前由 OpenClaw 再做一遍）
     for img in manifest.get("images", []):
