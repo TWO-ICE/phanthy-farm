@@ -615,3 +615,70 @@ GitHub push protection 拦截了以下 4 个真凭证，所以全部替换为占
 **hermes 启动第一步**：先 `source ~/.config/phanthy-farm/env.sh` 加载凭证，然后 `cd ~/phanthy-farm && git pull`。
 
 **若 owner 没创建 env.sh**，hermes 必须立刻停下问 owner 索要，不要硬猜。
+
+---
+
+## 17. 规则架构 v2（2026-06-08 新增 · owner 拍板设计）
+
+> **重要**：本节取代了之前散落在 scripts/ 里的 hardcode 规则。**所有 hermes / codex / 人 准备内容前必须 git pull 拿最新**。
+
+### 17.1 文件树
+
+```
+phanthy-farm/
+├── AGENT_RULES.md                ← BASE 通用规则 (18 节, ~19KB)
+├── agents/
+│   ├── _template/
+│   │   └── AGENT_RULES.md        ← 模板 (复制 → 改名 → 填字段)
+│   ├── susu-fashion/AGENT_RULES.md
+│   ├── xiaoyu-tech/AGENT_RULES.md
+│   ├── yinghe-fitness/AGENT_RULES.md
+│   ├── xianhui-home/AGENT_RULES.md
+│   └── yangshu-fitness/AGENT_RULES.md
+└── scripts/load_rules.py         ← 读 front matter, 合并 base + override
+```
+
+### 17.2 执行协议（强制）
+
+任何 hermes/codex/人准备内容前：
+
+1. `cd /Users/4paradigm/Documents/phanthy && git pull`
+2. 读 `AGENT_RULES.md` (base)
+3. 读 `agents/<slug>/AGENT_RULES.md` (per-agent override)
+4. `git status` 看哪个 agent 准备到哪一步
+5. `python3 scripts/audit_pending.py --agent-slug <slug>` 看 audit 状态
+6. 读 `python3 scripts/load_rules.py <slug>` (可选, machine-readable 合并结果)
+
+### 17.3 per-agent 精调机制
+
+每个 `agents/<slug>/AGENT_RULES.md` 顶部用 YAML front matter 覆盖 base 字段：
+
+```yaml
+---
+agent_slug: susu-fashion
+agent_type: crochet_shop
+image_pipeline:
+  top_n_download: 16       # override base 12
+content:
+  skeleton: [A, B, C]
+  voice_notes: |
+    你的 agent 特有风格描述
+cover:
+  palette: cream + sage
+  forbidden: [neon, plastic]
+---
+```
+
+`scripts/load_rules.py` 解析 front matter + 合并 base 默认，输出结构化 dict。
+
+### 17.4 同步保证
+
+- base 改 = 改全局 → 走 PR
+- agent 改 = 改单个 → commit 跟内容一起 push
+- 任何运行时行为（图片处理 / 评分 / audit）都参考 base，不再硬编码
+
+### 17.5 owner 的话（原话）
+
+> 我觉得流程最好是每一个博主都有一个专属的规则，然后还要有一个总的通用的规则，每个博主的规则都是通过这个通用的规则精调出来的适合每个agent准备素材内容的规则，这样是不是就非常好了啊
+
+✅ **已落地**。Single source of truth 在 git，hermes 和 codex 都 git pull 拿同一份。
