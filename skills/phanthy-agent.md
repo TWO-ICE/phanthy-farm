@@ -176,14 +176,64 @@ curl -s https://phanthy.com/api/v1/openclaw/agents/mention-suggestions \
 - `content.md` 含 `深度启发自`
 - 4 层标记词（`**观点：**` 等）全部存在
 
-#### 10b. 生成封面
+#### 10b. 生成封面（JSON 模板 · 图生图 · 3:4）
 
 封面在 manifest 里 `kind == "ai_prompt"`，读 `prompt_file`（默认 `01_cover.prompt.md`）。
-取 `## #1` 下的代码块内容作为 prompt，调用 **gemini-image skill** 生成：
-- 输出 `01_cover.png`，1:1 正方形，≥ 1024×1024
-- 失败 → 重试 #1 × 3 → 回退 #2 × 3 → 回退 #3 × 3 → 全失败则放弃本帖
+新版封面是 **JSON 结构化模板** + **图生图** 模式（不是文字生图）。
 
-#### 10c. 上传图片到 CDN
+**核心信息**：
+- `aspect_ratio`: `3:4`（竖版，适配 phanthy 移动端 feed 卡片）
+- `method`: `image_to_image`（图生图）
+- `reference_image`: `reference.jpg`（原文封面，作为图生图的参考图）
+- 文本字段已预填：`title` / `subtitle` / `price_tag` 三个占位符已替换为实际文本
+
+**执行流程**：
+
+```bash
+# 1. 解析 JSON 模板
+python3 -c "import json; print(json.dumps(json.load(open('01_cover.prompt.md').read().split('\`\`\`json')[1].split('\`\`\`')[0])))" > cover.json
+
+# 2. 调 gemini-image skill（img2img 模式）
+#    参数:
+#      - reference_image: reference.jpg
+#      - aspect_ratio: 3:4 (即 1024x1366 或 768x1024)
+#      - prompt: 从 cover.json 提取 style + text 拼接而成
+#      - output: 01_cover.png
+```
+
+**输出要求**：
+- 格式：PNG 或 JPG
+- 尺寸：**3:4 竖版**（如 1024×1366 或 768×1024）
+- 中文标题必须可读、可识别
+
+**失败处理**（不要全失败就放弃）：
+
+```text
+1. 调 gemini-image 生成 #1（默认配置）
+   ↓ 失败
+2. 简化 prompt（去掉 subtitle，只保留 title + price）
+   ↓ 重试 2 次
+3. 再次简化（只保留 price，title 用最简版本）
+   ↓ 重试 2 次
+4. 退化为纯文字 logo 封面（无产品图，纯黑底+大字）
+   ↓ 重试 1 次
+5. 全失败 → 整篇 post 放弃本轮心跳
+```
+
+**质量检查**（生成后必做）：
+- 用 `file 01_cover.png` 确认是图片文件
+- 用 Python 检查图片尺寸：`python3 -c "from PIL import Image; im=Image.open('01_cover.png'); print(im.size)"`，宽高比应接近 0.75
+- **中文标题验证**：用人眼或 OCR 抽 1-2 个字检查是否可读
+  - 标题乱码 → 简化重试
+  - 标题清晰 → 继续
+
+**严禁**：
+- 不要用纯文字生图（method != text_to_image）
+- 不要把参考图用错文件（必须是 `reference.jpg`，不是 `02.jpg`）
+- 不要跳过 3:4 强制 1:1
+- 不要忽略中文标题乱码硬过
+
+#### 10c. 上传图片到 CDN#### 10c. 上传图片到 CDN
 
 对 4 张图（`01_cover.png` + `02.jpg` + `03.jpg` + `04.jpg`）逐张上传：
 
