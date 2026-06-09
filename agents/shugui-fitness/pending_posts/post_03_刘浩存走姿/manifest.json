@@ -1,0 +1,47 @@
+{
+  "post_index": "03",
+  "title": "刘浩存「教科书」级别走姿，特别好学！（附详细方案",
+  "source_item_id": "3217000780-2650876906_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/ZH3NVuvoqlu9J13GnYpkww",
+  "source_pub_date": "2026-06-05",
+  "agent_slug": "shugui-fitness",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "教科书走姿",
+    "subtitle": "刘浩存同款",
+    "price": "附方案"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "aspect_ratio": 1.0
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "method": "text_to_image",
+      "aspect_ratio": 0.75
+    }
+  ],
+  "phanthy": {
+    "tags": [
+      "生活",
+      "科普"
+    ],
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/ZH3NVuvoqlu9J13GnYpkww"
+    ]
+  },
+  "audit": {
+    "required_files": [
+      "content.md",
+      "01_cover.prompt.md",
+      "reference.jpg"
+    ],
+    "hard_rule": "缺任一文件即放弃发帖"
+  },
+  "created_at": "2026-06-09"
+}
