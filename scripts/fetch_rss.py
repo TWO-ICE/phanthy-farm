@@ -2,6 +2,8 @@
 """
 从 wemprss 拉取博主 RSS，清洗为标准化 Markdown 选题库。
 
+v3: 正文图片全部下载（排除异常/小图/二维码/GIF），下载后裁下方 20% 去水印。
+
 用法:
   python3 fetch_rss.py --mp-id MP_WXS_xxx --agent-slug linajie --top-n 20
 """
@@ -21,7 +23,6 @@ def fetch_rss(mp_id: str, top_n: int) -> str:
         return resp.read().decode("utf-8")
 
 def parse_rss(xml: str) -> dict:
-    """简易 RSS 解析（无依赖）。"""
     import xml.etree.ElementTree as ET
     root = ET.fromstring(xml)
     ns = {"content": "http://purl.org/rss/1.0/modules/content/"}
@@ -50,12 +51,11 @@ def parse_rss(xml: str) -> dict:
     }
 
 def clean_html(raw_html: str):
-    """返回 (纯文本, 图片列表)。图片 URL 已解码 &amp; → &。"""
     raw = re.sub(r"<(script|style)[^>]*>.*?</\1>", "", raw_html, flags=re.S|re.I)
     images = []
     raw_matches = list(re.finditer(r'<img[^>]+src="([^"]+)"([^>]*)>', raw))
     for m in raw_matches:
-        url = html.unescape(m.group(1))  # 解码 &amp; → &
+        url = html.unescape(m.group(1))
         attrs = m.group(2)
         alt_m = re.search(r'alt="([^"]*)"', attrs)
         w_m = re.search(r'width="(\d+)"', attrs)
@@ -66,7 +66,6 @@ def clean_html(raw_html: str):
             "width": int(w_m.group(1)) if w_m else None,
             "height": int(h_m.group(1)) if h_m else None,
         })
-    # 替换 <img> 为占位符（用原始匹配，避免解码后 escape 失配）
     for idx in range(len(raw_matches) - 1, -1, -1):
         m = raw_matches[idx]
         raw = raw[:m.start()] + f"\n[IMG:{idx}]\n" + raw[m.end():]
@@ -79,27 +78,40 @@ def clean_html(raw_html: str):
     return text.strip(), images
 
 
-def pick_top3_images(images: list, cover_url: str = "") -> list:
-    """按 prompts/00 § 4.2-4.3 规则筛 Top-3 正文配图。"""
-    from urllib.parse import urlparse
-
+def filter_body_images(images: list, cover_url: str = "") -> list:
+    """
+    v3: 筛选所有正文配图（不限数量），排除异常。
+    排除规则：二维码、公众号名片、占位图、小尺寸(<200x200)、GIF、广告图、比例异常(<0.3 或 >5)。
+    """
     def exclude(img):
         u = img["url"].lower()
         alt = (img.get("alt") or "").lower()
+        # 二维码
         if any(k in u for k in ["qrcode", "qr_noroaming", "biz_qr", "mmbiz_qrcode"]):
             return "二维码"
+        # 公众号名片
         if any(k in u for k in ["biz_head", "headimg"]):
             return "公众号名片"
+        # 占位图
         if any(k in u for k in ["placeholder", "default_cover"]):
             return "占位图"
-        # 注意：watermark=1 是微信全图水印参数，不视作"水印占位"
+        # 尺寸检查
         w, h = img.get("width"), img.get("height")
-        if w and h and (w < 200 or h < 200):
-            return f"小尺寸({w}x{h})"
+        if w and h:
+            if w < 200 or h < 200:
+                return f"小尺寸({w}x{h})"
+            ratio = w / h
+            if ratio < 0.3 or ratio > 5:
+                return f"比例异常({ratio:.1f})"
+        # GIF
         if u.endswith(".gif") or "mmbiz_gif" in u:
-            return "GIF表情"
-        if any(k in alt for k in ["广告", "banner"]):
+            return "GIF"
+        # 广告
+        if any(k in alt for k in ["广告", "banner", "推广"]):
             return "广告"
+        # 推广类图片（常见于底部）
+        if any(k in u for k in ["biz_tpc", "reward", "zan", "like"]):
+            return "推广图"
         return None
 
     def score(img, pos):
@@ -108,72 +120,77 @@ def pick_top3_images(images: list, cover_url: str = "") -> list:
         w, h = img.get("width"), img.get("height")
         if w and h:
             if w >= 600 and h >= 400: s += 3
-            ratio = w / h if h else 0
-            if any(abs(ratio - r) < 0.15 * r for r in [16/9, 4/3, 1.0, 3/2]):
-                s += 2
+            elif w >= 400 and h >= 300: s += 1
         if "mmbiz_jpg" in u or "mmbiz_png" in u: s += 1
-        if pos >= 1: s += 1
-        if img.get("alt") and "广告" not in img["alt"]: s += 1
+        if pos >= 1: s += 1  # 跳过第一张（可能是封面重复）
+        if img.get("alt"): s += 1
         if any(k in u for k in ["640", "article", "content"]): s += 1
         return s
 
     scored = []
     for pos, img in enumerate(images):
-        if exclude(img):
+        reason = exclude(img)
+        if reason:
             continue
-        if cover_url and urlparse(img["url"]).path == urlparse(cover_url).path:
-            continue
-        scored.append((score(img, pos), pos, img))
+        # 跳过和封面一样的图
+        if cover_url:
+            from urllib.parse import urlparse
+            iu = urlparse(img["url"]).path.split("/")[-1].split("?")[0]
+            cu = urlparse(cover_url).path.split("/")[-1].split("?")[0]
+            if iu and cu and iu == cu:
+                continue
+        s = score(img, pos)
+        scored.append((s, pos, img))
 
+    # 按分数排序，但保持原文顺序（stable sort by position）
     scored.sort(key=lambda x: (-x[0], x[1]))
-    return [item[2] for item in scored[:3]]
+    return [item[2] for item in scored]
 
-NOISE_PATTERNS = [
-    r"点亮关注", r"点赞收藏", r"求个三连", r"主页看更多", r"求关注",
-    r"在看|星标|转发|收藏", r"上篇|下篇|往期",
-]
 
-def remove_noise(text: str) -> str:
-    for pat in NOISE_PATTERNS:
-        text = re.sub(pat, "", text)
-    return text
+def remove_noise(text):
+    noise = [
+        r"点亮[^\n]*关注", r"点个[^\n]*赞", r"转发[^\n]*支持", r"收藏[^\n]*不迷路",
+        r"主页[^\n]*更多", r"求[^\n]*三连", r"扫码[^\n]*关注", r"长按[^\n]*识别",
+        r"本文[^\n]*作者", r"商务[^\n]*合作", r"来源[^\n]*网络",
+    ]
+    for pat in noise:
+        text = re.sub(pat, "", text, flags=re.I)
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
 
-def parse_pubdate(s: str) -> str:
+def parse_pubdate(s):
     try:
-        return datetime.strptime(s, "%a, %d %b %Y %H:%M:%S %z").strftime("%Y-%m-%d")
-    except Exception:
-        return ""
+        from email.utils import parsedate_to_datetime
+        return parsedate_to_datetime(s).strftime("%Y-%m-%d")
+    except:
+        return s[:10] if len(s) >= 10 else s
 
-def proxy_download(img_url: str, dst: Path, crop_bottom: float = 0.20):
-    """
-    下载图片并裁剪下方 crop_bottom 比例（默认 20%），用于去掉公众号水印。
-    crop_bottom=0 表示不裁剪。
-    """
-    proxy = f"{WEMPRSS_BASE}/api/v1/wx/tools/image/proxy?" + \
-            urllib.parse.urlencode({"url": img_url, "output_format": "jpeg"})
-    req = urllib.request.Request(proxy, headers={"User-Agent": USER_AGENT})
+def proxy_download(url: str, dst: Path, crop_bottom: float = 0.20):
+    """通过 wemprss 图片代理下载，自动裁剪下方 crop_bottom（默认 20%）去水印。"""
+    dl_url = f"{WEMPRSS_BASE}/api/v1/wx/image-proxy?url={urllib.parse.quote(url, safe='')}"
+    req = urllib.request.Request(dl_url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=30) as resp:
         raw_bytes = resp.read()
+
+    if not raw_bytes or len(raw_bytes) < 500:
+        raise RuntimeError(f"empty response ({len(raw_bytes)} bytes)")
+
+    dst.parent.mkdir(parents=True, exist_ok=True)
 
     if crop_bottom <= 0:
         dst.write_bytes(raw_bytes)
         return
 
-    # 裁剪下方 crop_bottom 区域
     try:
         from PIL import Image
         import io
         im = Image.open(io.BytesIO(raw_bytes))
         w, h = im.size
         crop_h = int(h * crop_bottom)
-        # 保留上方 (0, 0) 到 (w, h - crop_h)
         cropped = im.crop((0, 0, w, h - crop_h))
-        # 保存为 JPEG 格式
         if cropped.mode in ("RGBA", "P"):
             cropped = cropped.convert("RGB")
         cropped.save(dst, "JPEG", quality=92, optimize=True)
     except Exception as e:
-        # PIL 不可用或图片损坏 → 保留原图
         sys.stderr.write(f"[warn] crop failed for {dst.name}: {e}, saving original\n")
         dst.write_bytes(raw_bytes)
 
@@ -191,13 +208,11 @@ def main():
     if not args.dry_run:
         raw_dir.mkdir(parents=True, exist_ok=True)
 
-    # 1. 拉取
     print(f"[1/4] Fetching RSS for {args.mp_id} (top {args.top_n})")
     xml = fetch_rss(args.mp_id, args.top_n)
     parsed = parse_rss(xml)
     print(f"     mp_name={parsed['mp_name']}, items={len(parsed['items'])}")
 
-    # 2. 元数据
     meta = {
         "mp_id": args.mp_id,
         "mp_name": parsed["mp_name"],
@@ -209,7 +224,6 @@ def main():
     if not args.dry_run:
         (sources / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2))
 
-    # 3. 清洗 + 落盘
     valid, skipped = [], []
     for it in parsed["items"]:
         if not it["id"]: continue
@@ -242,10 +256,10 @@ def main():
                 except Exception as e:
                     rec["cover_status"] = f"failed: {e}"
 
-                # 正文配图：JPG 优先，GIF/小尺寸/二维码排除，取 Top-3
-                top3 = pick_top3_images(images, it.get("cover_url", ""))
-                rec["top3_images"] = []
-                for n, pick in enumerate(top3, start=1):
+                # v3: 正文配图全下载（排除异常），不再限 3 张
+                body_images = filter_body_images(images, it.get("cover_url", ""))
+                rec["body_images"] = []
+                for n, pick in enumerate(body_images, start=1):
                     dst = item_dir / f"img_{n}.jpg"
                     entry = {"rank": n, "url": pick["url"],
                              "alt": pick.get("alt", ""),
@@ -255,16 +269,15 @@ def main():
                         entry["status"] = "ok"
                     except Exception as e:
                         entry["status"] = f"failed: {e}"
-                    rec["top3_images"].append(entry)
-                # 不足 3 张：由阶段 3 调 $gemini-image 补足（此处不调，仅记缺口）
-                rec["top3_gap"] = max(0, 3 - len(top3))
+                    rec["body_images"].append(entry)
+                rec["body_image_count"] = len(body_images)
+                rec["body_image_failed"] = sum(1 for e in rec["body_images"] if e["status"] != "ok")
 
             front = "\n".join(f"{k}: {json.dumps(v, ensure_ascii=False) if not isinstance(v,str) else v}"
                               for k, v in rec.items())
             md = f"---\n{front}\n---\n\n{text}"
             (raw_dir / f"{it['id']}.md").write_text(md)
 
-    # 4. 打包
     if not args.dry_run and valid:
         import zipfile
         zip_path = sources / f"{args.mp_id}.zip"
