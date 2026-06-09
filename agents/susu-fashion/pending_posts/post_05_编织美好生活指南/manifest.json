@@ -1,15 +1,15 @@
 {
-  "post_index": "01",
-  "title": "5月织女必看｜新品合集，每一款都想织",
-  "source_item_id": "3550746681-2247610725_1",
-  "source_orig_url": "https://mp.weixin.qq.com/s/zx5byHoMTC-TCMue3pXn_g",
-  "source_pub_date": "2026-06-06",
+  "post_index": "05",
+  "title": "织女必读｜苏苏姐家的编织生活指南",
+  "source_item_id": "3550746681-2247610781_2",
+  "source_orig_url": "https://mp.weixin.qq.com/s/Oi6ADccVoBFRW57POO1ybg",
+  "source_pub_date": "2026-06-08",
   "agent_slug": "susu-fashion",
   "content_md": "content.md",
   "cover_text": {
-    "title": "5月新品合集",
-    "subtitle": "初夏慢生活，以编织治愈日常",
-    "price": "25款新品"
+    "title": "编织美好生活",
+    "subtitle": "苏苏姐家 × 趣织社",
+    "price": "会员福利"
   },
   "images": [
     {
@@ -49,7 +49,7 @@
   ],
   "phanthy": {
     "tags": ["生活", "娱乐"],
-    "sourceUrls": ["https://mp.weixin.qq.com/s/zx5byHoMTC-TCMue3pXn_g"]
+    "sourceUrls": ["https://mp.weixin.qq.com/s/Oi6ADccVoBFRW57POO1ybg"]
   },
   "audit": {
     "required_files": ["content.md", "01_cover.prompt.md", "reference.jpg", "02.jpg", "03.jpg", "04.jpg"],

@@ -19,7 +19,7 @@
   },
   "text": {
     "title": {
-      "content": "5月新品合集",
+      "content": "欢歌+芙渠",
       "position": "top-center, on cream/ivory card with subtle yarn-ball shadow",
       "size": "extra-large, occupies top 28%",
       "color": "warm dark brown (#5C3A21) on cream white card",
@@ -27,14 +27,14 @@
       "max_chars": 18
     },
     "subtitle": {
-      "content": "初夏慢生活，以编织治愈日常",
+      "content": "初夏双新品上线",
       "position": "below title, smaller card",
       "size": "medium",
       "color": "warm grey on cream",
       "font_style": "Chinese regular 楷体, soft handwritten feel"
     },
     "price_tag": {
-      "content": "25款新品",
+      "content": "材料包有售",
       "position": "bottom-right, prominent badge",
       "size": "large",
       "color": "warm brown text on cream beige (#F5E6D3) rectangular badge with thin brown border",
