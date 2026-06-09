@@ -1,0 +1,47 @@
+{
+  "post_index": "01",
+  "title": "意式生巧奶冻-巧克力重度爱好者集合",
+  "source_item_id": "3209793608-2247487494_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/eJ6O-66PmT0kQ73HbL1C0w",
+  "source_pub_date": "2026-05-31",
+  "agent_slug": "qings-recipe",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "意式生巧奶冻",
+    "subtitle": "巧克力爱好者集合",
+    "price": "超简单"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "aspect_ratio": 1.0
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "method": "image_to_image",
+      "aspect_ratio": 0.75
+    }
+  ],
+  "phanthy": {
+    "tags": [
+      "生活",
+      "娱乐"
+    ],
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/eJ6O-66PmT0kQ73HbL1C0w"
+    ]
+  },
+  "audit": {
+    "required_files": [
+      "content.md",
+      "01_cover.prompt.md",
+      "reference.jpg"
+    ],
+    "hard_rule": "缺任一文件即放弃发帖"
+  },
+  "created_at": "2026-06-09"
+}

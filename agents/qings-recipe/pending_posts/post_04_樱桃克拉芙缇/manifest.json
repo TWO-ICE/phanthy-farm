@@ -1,0 +1,46 @@
+{
+  "post_index": "04",
+  "title": "法式复古甜品-樱桃克拉芙缇",
+  "source_item_id": "3209793608-2247487582_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/xf8p19Pc8boUkVsOKWaDQw",
+  "source_pub_date": "2026-06-06",
+  "agent_slug": "qings-recipe",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "樱桃克拉芙缇",
+    "subtitle": "法式复古甜品",
+    "price": "新手友好"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "aspect_ratio": 1.0
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "method": "image_to_image",
+      "aspect_ratio": 0.75
+    }
+  ],
+  "phanthy": {
+    "tags": [
+      "生活"
+    ],
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/xf8p19Pc8boUkVsOKWaDQw"
+    ]
+  },
+  "audit": {
+    "required_files": [
+      "content.md",
+      "01_cover.prompt.md",
+      "reference.jpg"
+    ],
+    "hard_rule": "缺任一文件即放弃发帖"
+  },
+  "created_at": "2026-06-09"
+}
