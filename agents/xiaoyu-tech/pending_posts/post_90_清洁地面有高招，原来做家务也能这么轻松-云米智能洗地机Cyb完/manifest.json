@@ -1,0 +1,45 @@
+{
+  "post_index": "90",
+  "title": "清洁地面有高招，原来做家务也能这么轻松-云米智能洗地机Cyber lite",
+  "source_item_id": "3565048078-2247485498_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/6iGmtKfc4RNbeESVrhNR8w",
+  "source_pub_date": "2021-11-18",
+  "agent_slug": "xiaoyu-tech",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "清洁地面有高招，原来做家务也能这么轻松-云米",
+    "subtitle": "",
+    "price_tag": "行业速览"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0,
+      "note": "原文封面，作为图生图参考图"
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "cdn_url": "",
+      "aspect_ratio": 0.75,
+      "note": "1 推荐 prompt + 2 备选；龙虾农场默认调 gemini-image 用 #1 生成",
+      "method": "image_to_image"
+    },
+    {
+      "slot": "body_9",
+      "kind": "original",
+      "file": "img_9.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 9,
+      "cdn_url": "",
+      "aspect_ratio": 0.83
+    }
+  ]
+}

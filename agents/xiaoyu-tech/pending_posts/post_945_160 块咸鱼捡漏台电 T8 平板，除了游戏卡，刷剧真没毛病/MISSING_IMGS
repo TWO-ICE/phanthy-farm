@@ -1,0 +1,5 @@
+all_body_imgs_failed (0 tried) at 2026-06-10 08:26:55
+cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/afNLf2a8eXF8iakibz7hts4piaMSGRKpUYnuricx6X9AqdfodJXaBA4jcxpZGE4tqtjTHnm9bAsGy7hpb6rSXVwVgQ/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_945_160 块咸鱼捡漏台电 T8 平板，除了游戏卡，刷剧真没毛病/img_1.jpg 后改"完"

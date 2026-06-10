@@ -1,0 +1,5 @@
+all_body_imgs_failed (12 tried) at 2026-06-10 00:04:23
+cover_url: https://mmbiz.qlogo.cn/mmbiz_jpg/afNLf2a8eXEjiayKOnqNvOucDySCavSpeKLibcRdkUAOlGGJJIk5oJwXVeiaUOeSC1aHZQppRjyLo65PMIjPJh9nA/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_56_价格品质双优的QCY T17S蓝牙耳机，你能经得起如此诱惑吗/img_1.jpg 后改"完"

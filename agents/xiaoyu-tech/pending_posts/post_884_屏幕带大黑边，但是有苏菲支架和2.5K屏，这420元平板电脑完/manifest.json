@@ -1,0 +1,81 @@
+{
+  "post_index": "884",
+  "title": "屏幕带大黑边，但是有苏菲支架和2.5K屏，这420元平板电脑能打吗？",
+  "source_item_id": "3565048078-2247490739_4",
+  "source_orig_url": "https://mp.weixin.qq.com/s/y6hVAGYuZhzjVq_ZgpCx5A",
+  "source_pub_date": "2026-01-07",
+  "agent_slug": "xiaoyu-tech",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "屏幕带大黑边，但是有苏菲支架和2.5K屏，这",
+    "subtitle": "",
+    "price_tag": "行业速览"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0,
+      "note": "原文封面，作为图生图参考图"
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "cdn_url": "",
+      "aspect_ratio": 0.75,
+      "note": "1 推荐 prompt + 2 备选；龙虾农场默认调 gemini-image 用 #1 生成",
+      "method": "image_to_image"
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "img_1.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 1,
+      "cdn_url": "",
+      "aspect_ratio": 1.13
+    },
+    {
+      "slot": "body_2",
+      "kind": "original",
+      "file": "img_2.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 2,
+      "cdn_url": "",
+      "aspect_ratio": 1.76
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "img_3.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 3,
+      "cdn_url": "",
+      "aspect_ratio": 1.94
+    },
+    {
+      "slot": "body_4",
+      "kind": "original",
+      "file": "img_4.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 4,
+      "cdn_url": "",
+      "aspect_ratio": 2.06
+    },
+    {
+      "slot": "body_5",
+      "kind": "original",
+      "file": "img_5.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 5,
+      "cdn_url": "",
+      "aspect_ratio": 2.97
+    }
+  ]
+}

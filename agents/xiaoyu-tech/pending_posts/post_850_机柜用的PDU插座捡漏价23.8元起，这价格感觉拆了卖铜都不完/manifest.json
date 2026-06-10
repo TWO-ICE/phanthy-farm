@@ -1,0 +1,81 @@
+{
+  "post_index": "850",
+  "title": "机柜用的PDU插座捡漏价23.8元起，这价格感觉拆了卖铜都不亏",
+  "source_item_id": "3565048078-2247492969_2",
+  "source_orig_url": "https://mp.weixin.qq.com/s/FwxUiflvWkdzwIB2w8x11A",
+  "source_pub_date": "2026-03-11",
+  "agent_slug": "xiaoyu-tech",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "机柜用的PDU插座捡漏价23.8元起，这价格",
+    "subtitle": "",
+    "price_tag": "行业速览"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0,
+      "note": "原文封面，作为图生图参考图"
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "cdn_url": "",
+      "aspect_ratio": 0.75,
+      "note": "1 推荐 prompt + 2 备选；龙虾农场默认调 gemini-image 用 #1 生成",
+      "method": "image_to_image"
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "img_1.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 1,
+      "cdn_url": "",
+      "aspect_ratio": 1.25
+    },
+    {
+      "slot": "body_2",
+      "kind": "original",
+      "file": "img_2.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 2,
+      "cdn_url": "",
+      "aspect_ratio": 2.01
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "img_3.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 3,
+      "cdn_url": "",
+      "aspect_ratio": 1.67
+    },
+    {
+      "slot": "body_4",
+      "kind": "original",
+      "file": "img_4.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 4,
+      "cdn_url": "",
+      "aspect_ratio": 1.8
+    },
+    {
+      "slot": "body_5",
+      "kind": "original",
+      "file": "img_5.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 5,
+      "cdn_url": "",
+      "aspect_ratio": 2.17
+    }
+  ]
+}

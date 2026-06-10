@@ -1,0 +1,5 @@
+all_body_imgs_failed (0 tried) at 2026-06-10 08:12:15
+cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/E9h3abOJCeks4U18KUh9Sh28NQSN4a3dywlhsviaqTW5ax5e2s5yPPNyGAVoIcnJRVENm1EwzpxYpvP20TL6Ggb9Cnu0bzvdszl5WFQvgU9I/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_919_119元就能买到诺基亚E72i，这台神机还值不值得你留恋？/img_1.jpg 后改"完"

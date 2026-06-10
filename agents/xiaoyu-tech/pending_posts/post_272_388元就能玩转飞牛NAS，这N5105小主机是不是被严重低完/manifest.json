@@ -1,0 +1,81 @@
+{
+  "post_index": "272",
+  "title": "388元就能玩转飞牛NAS，这N5105小主机是不是被严重低估了？",
+  "source_item_id": "3565048078-2247493707_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/zAhNqDXIY2OWjTHOmeEMDQ",
+  "source_pub_date": "2026-03-24",
+  "agent_slug": "xiaoyu-tech",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "388元就能玩转飞牛NAS，这N5105小主",
+    "subtitle": "",
+    "price_tag": "行业速览"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0,
+      "note": "原文封面，作为图生图参考图"
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "cdn_url": "",
+      "aspect_ratio": 0.75,
+      "note": "1 推荐 prompt + 2 备选；龙虾农场默认调 gemini-image 用 #1 生成",
+      "method": "image_to_image"
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "img_1.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 1,
+      "cdn_url": "",
+      "aspect_ratio": 1.34
+    },
+    {
+      "slot": "body_2",
+      "kind": "original",
+      "file": "img_2.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 2,
+      "cdn_url": "",
+      "aspect_ratio": 1.15
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "img_3.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 3,
+      "cdn_url": "",
+      "aspect_ratio": 2.01
+    },
+    {
+      "slot": "body_5",
+      "kind": "original",
+      "file": "img_5.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 5,
+      "cdn_url": "",
+      "aspect_ratio": 1.98
+    },
+    {
+      "slot": "body_7",
+      "kind": "original",
+      "file": "img_7.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 7,
+      "cdn_url": "",
+      "aspect_ratio": 2.15
+    }
+  ]
+}

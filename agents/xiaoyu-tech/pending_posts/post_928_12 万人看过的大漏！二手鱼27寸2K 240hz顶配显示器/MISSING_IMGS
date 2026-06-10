@@ -1,0 +1,5 @@
+all_body_imgs_failed (0 tried) at 2026-06-10 08:17:34
+cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/afNLf2a8eXHK0etGichf7uvib0xdZeicYe3nVNAFdYxz87vIEHDJ9Dpiax2icwGxCOGvkvhjHcZvoESvYxM3vnWfPsA/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_928_12 万人看过的大漏！二手鱼27寸2K 240hz顶配显示器/img_1.jpg 后改"完"

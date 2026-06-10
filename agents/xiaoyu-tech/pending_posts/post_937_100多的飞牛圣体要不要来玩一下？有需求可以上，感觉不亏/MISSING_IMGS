@@ -1,0 +1,5 @@
+all_body_imgs_failed (0 tried) at 2026-06-10 08:22:32
+cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/E9h3abOJCenJ3XbqyaXNjgqHvuRWtaib4PWNHicIwnsicYXnhexkKDo4RDtuNkAtYA9d7qXFscYaeib7b5zlwBibM7Pq5mOibAWXNooiaicEeMnicpsk/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_937_100多的飞牛圣体要不要来玩一下？有需求可以上，感觉不亏/img_1.jpg 后改"完"

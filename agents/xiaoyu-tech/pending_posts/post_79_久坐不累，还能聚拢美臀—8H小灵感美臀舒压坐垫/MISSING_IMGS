@@ -1,0 +1,5 @@
+all_body_imgs_failed (12 tried) at 2026-06-10 00:04:31
+cover_url: https://mmbiz.qlogo.cn/mmbiz_jpg/afNLf2a8eXH46qG1WpLMruVeBhSkdkdjOg4wPuGCWowOQxNzH5fjH5pyrJkvV6Ytp9cR1BETOOvtJfwT6dPb9g/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_79_久坐不累，还能聚拢美臀—8H小灵感美臀舒压坐垫/img_1.jpg 后改"完"

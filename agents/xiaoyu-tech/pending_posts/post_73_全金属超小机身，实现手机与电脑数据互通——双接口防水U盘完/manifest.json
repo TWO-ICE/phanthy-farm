@@ -1,0 +1,135 @@
+{
+  "post_index": "73",
+  "title": "全金属超小机身，实现手机与电脑数据互通——双接口防水U盘",
+  "source_item_id": "3565048078-2247485868_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/vCw9VvSD7iMZaJdi-e-gLg",
+  "source_pub_date": "2022-04-24",
+  "agent_slug": "xiaoyu-tech",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "全金属超小机身，实现手机与电脑数据互通——双",
+    "subtitle": "",
+    "price_tag": "行业速览"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0,
+      "note": "原文封面，作为图生图参考图"
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "cdn_url": "",
+      "aspect_ratio": 0.75,
+      "note": "1 推荐 prompt + 2 备选；龙虾农场默认调 gemini-image 用 #1 生成",
+      "method": "image_to_image"
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "img_1.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 1,
+      "cdn_url": "",
+      "aspect_ratio": 1.88
+    },
+    {
+      "slot": "body_2",
+      "kind": "original",
+      "file": "img_2.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 2,
+      "cdn_url": "",
+      "aspect_ratio": 1.88
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "img_3.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 3,
+      "cdn_url": "",
+      "aspect_ratio": 1.88
+    },
+    {
+      "slot": "body_4",
+      "kind": "original",
+      "file": "img_4.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 4,
+      "cdn_url": "",
+      "aspect_ratio": 2.54
+    },
+    {
+      "slot": "body_6",
+      "kind": "original",
+      "file": "img_6.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 6,
+      "cdn_url": "",
+      "aspect_ratio": 1.88
+    },
+    {
+      "slot": "body_7",
+      "kind": "original",
+      "file": "img_7.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 7,
+      "cdn_url": "",
+      "aspect_ratio": 1.88
+    },
+    {
+      "slot": "body_8",
+      "kind": "original",
+      "file": "img_8.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 8,
+      "cdn_url": "",
+      "aspect_ratio": 1.87
+    },
+    {
+      "slot": "body_9",
+      "kind": "original",
+      "file": "img_9.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 9,
+      "cdn_url": "",
+      "aspect_ratio": 1.87
+    },
+    {
+      "slot": "body_10",
+      "kind": "original",
+      "file": "img_10.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 10,
+      "cdn_url": "",
+      "aspect_ratio": 1.88
+    },
+    {
+      "slot": "body_11",
+      "kind": "original",
+      "file": "img_11.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 11,
+      "cdn_url": "",
+      "aspect_ratio": 1.88
+    },
+    {
+      "slot": "body_12",
+      "kind": "original",
+      "file": "img_12.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 12,
+      "cdn_url": "",
+      "aspect_ratio": 1.87
+    }
+  ]
+}

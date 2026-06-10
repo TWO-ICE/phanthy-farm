@@ -1,0 +1,63 @@
+{
+  "post_index": "764",
+  "title": "买硬盘嫌贵就去二手鱼上捡漏，128G NVMe固态40起，这价格香不香",
+  "source_item_id": "3565048078-2247487945_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/ymaZYU1CsQioYl_bE9Ojmg",
+  "source_pub_date": "2025-11-03",
+  "agent_slug": "xiaoyu-tech",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "买硬盘嫌贵就去二手鱼上捡漏，128G NVM",
+    "subtitle": "",
+    "price_tag": "行业速览"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0,
+      "note": "原文封面，作为图生图参考图"
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "cdn_url": "",
+      "aspect_ratio": 0.75,
+      "note": "1 推荐 prompt + 2 备选；龙虾农场默认调 gemini-image 用 #1 生成",
+      "method": "image_to_image"
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "img_1.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 1,
+      "cdn_url": "",
+      "aspect_ratio": 2.35
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "img_3.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 3,
+      "cdn_url": "",
+      "aspect_ratio": 3.11
+    },
+    {
+      "slot": "body_4",
+      "kind": "original",
+      "file": "img_4.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 4,
+      "cdn_url": "",
+      "aspect_ratio": 1.79
+    }
+  ]
+}

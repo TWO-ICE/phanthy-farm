@@ -1,0 +1,5 @@
+all_body_imgs_failed (0 tried) at 2026-06-10 08:12:50
+cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/afNLf2a8eXGichibbQuSKS6ibXoKACbuEGibozibn48ewGurTXu1Rhic8rMibWkL5s5TfmTTCHIf9yN6L0p3vm9UuKquA/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_920_189元买华硕ROG 360水冷，是捡漏神价还是捡雷陷阱？/img_1.jpg 后改"完"

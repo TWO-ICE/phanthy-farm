@@ -1,0 +1,81 @@
+{
+  "post_index": "686",
+  "title": "硬盘涨价？我笑了！拆移动硬盘淘 2T 大牌盘，现在捡漏正当时",
+  "source_item_id": "3565048078-2247487479_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/8Y4w6VN_8du__z7H7U3DPA",
+  "source_pub_date": "2025-10-24",
+  "agent_slug": "xiaoyu-tech",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "硬盘涨价？我笑了！拆移动硬盘淘 2T 大牌盘",
+    "subtitle": "",
+    "price_tag": "行业速览"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0,
+      "note": "原文封面，作为图生图参考图"
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "cdn_url": "",
+      "aspect_ratio": 0.75,
+      "note": "1 推荐 prompt + 2 备选；龙虾农场默认调 gemini-image 用 #1 生成",
+      "method": "image_to_image"
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "img_1.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 1,
+      "cdn_url": "",
+      "aspect_ratio": 2.51
+    },
+    {
+      "slot": "body_2",
+      "kind": "original",
+      "file": "img_2.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 2,
+      "cdn_url": "",
+      "aspect_ratio": 2.45
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "img_3.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 3,
+      "cdn_url": "",
+      "aspect_ratio": 1.08
+    },
+    {
+      "slot": "body_4",
+      "kind": "original",
+      "file": "img_4.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 4,
+      "cdn_url": "",
+      "aspect_ratio": 1.65
+    },
+    {
+      "slot": "body_6",
+      "kind": "original",
+      "file": "img_6.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 6,
+      "cdn_url": "",
+      "aspect_ratio": 2.81
+    }
+  ]
+}

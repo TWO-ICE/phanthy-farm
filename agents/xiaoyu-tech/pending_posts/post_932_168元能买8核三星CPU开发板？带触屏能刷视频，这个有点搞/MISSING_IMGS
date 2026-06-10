@@ -1,0 +1,5 @@
+all_body_imgs_failed (0 tried) at 2026-06-10 08:19:31
+cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/E9h3abOJCemjSiaKXNic3YBTyBiawonvf4LtnHy36NcpZHsS6vyf1nvdYmptO716SOas8EXjviak3uCHw7h4tDECUlGEycCEialurgwdm0Wu4CW8/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_932_168元能买8核三星CPU开发板？带触屏能刷视频，这个有点搞/img_1.jpg 后改"完"

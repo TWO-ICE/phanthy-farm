@@ -1,0 +1,99 @@
+{
+  "post_index": "508",
+  "title": "Kindle阅读器跌下神坛，200多块的泡面盖还值不值得买？",
+  "source_item_id": "3565048078-2247493556_1",
+  "source_orig_url": "https://mp.weixin.qq.com/s/i1gCL91GIhvQyLFrFx-lQg",
+  "source_pub_date": "2026-03-22",
+  "agent_slug": "xiaoyu-tech",
+  "content_md": "content.md",
+  "cover_text": {
+    "title": "Kindle阅读器跌下神坛，200多块的泡面",
+    "subtitle": "",
+    "price_tag": "行业速览"
+  },
+  "images": [
+    {
+      "slot": "reference",
+      "kind": "original",
+      "file": "reference.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": "cover",
+      "cdn_url": "",
+      "aspect_ratio": 1.0,
+      "note": "原文封面，作为图生图参考图"
+    },
+    {
+      "slot": "cover",
+      "kind": "ai_prompt",
+      "prompt_file": "01_cover.prompt.md",
+      "prompt_strategy": "C",
+      "cdn_url": "",
+      "aspect_ratio": 0.75,
+      "note": "1 推荐 prompt + 2 备选；龙虾农场默认调 gemini-image 用 #1 生成",
+      "method": "image_to_image"
+    },
+    {
+      "slot": "body_1",
+      "kind": "original",
+      "file": "img_1.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 1,
+      "cdn_url": "",
+      "aspect_ratio": 1.04
+    },
+    {
+      "slot": "body_2",
+      "kind": "original",
+      "file": "img_2.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 2,
+      "cdn_url": "",
+      "aspect_ratio": 1.03
+    },
+    {
+      "slot": "body_3",
+      "kind": "original",
+      "file": "img_3.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 3,
+      "cdn_url": "",
+      "aspect_ratio": 0.93
+    },
+    {
+      "slot": "body_4",
+      "kind": "original",
+      "file": "img_4.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 4,
+      "cdn_url": "",
+      "aspect_ratio": 1.52
+    },
+    {
+      "slot": "body_5",
+      "kind": "original",
+      "file": "img_5.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 5,
+      "cdn_url": "",
+      "aspect_ratio": 2.78
+    },
+    {
+      "slot": "body_6",
+      "kind": "original",
+      "file": "img_6.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 6,
+      "cdn_url": "",
+      "aspect_ratio": 1.25
+    },
+    {
+      "slot": "body_7",
+      "kind": "original",
+      "file": "img_7.jpg",
+      "source": "wemprss_image_proxy",
+      "source_rank": 7,
+      "cdn_url": "",
+      "aspect_ratio": 2.08
+    }
+  ]
+}

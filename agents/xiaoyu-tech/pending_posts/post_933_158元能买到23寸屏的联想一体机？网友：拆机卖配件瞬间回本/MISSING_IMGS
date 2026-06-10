@@ -1,0 +1,5 @@
+all_body_imgs_failed (0 tried) at 2026-06-10 08:20:13
+cover_url: https://mmbiz.qpic.cn/sz_mmbiz_jpg/E9h3abOJCemotTibnqXtfiaHKHDYlD8ZbGpC13FwRZR4gZg7RaoUfYHbBhsJic4S6G5NOeWqyfx6tekiaTymk6FcQFyeibibY04oqg3OcNeudmJU4/0?wx_fmt=jpeg
+建议：
+  - 放宽 _lib.post_download_filter 阈值后再跑 complete
+  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_933_158元能买到23寸屏的联想一体机？网友：拆机卖配件瞬间回本/img_1.jpg 后改"完"
