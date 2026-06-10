@@ -1,5 +1,0 @@
-all_body_imgs_failed (0 tried) at 2026-06-10 08:25:23
-cover_url: https://mmbiz.qpic.cn/sz_mmbiz_jpg/E9h3abOJCem5vSvQprmia39ldM2D5tdWicGy5TJHb8s8OezFrEvuMiclxKl8X8KhD52JzDdNTDLozD2LuI2j5udlvibHTtNAImrKf9HnTibXLoLY/0?wx_fmt=jpeg
-建议：
-  - 放宽 _lib.post_download_filter 阈值后再跑 complete
-  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_943_18.8能买到高清手机内窥镜？修车时伸进去就能看到内部的秘密/img_1.jpg 后改"完"

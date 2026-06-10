@@ -1,5 +1,0 @@
-all_body_imgs_failed (0 tried) at 2026-06-10 08:23:52
-cover_url: https://mmbiz.qpic.cn/sz_mmbiz_jpg/E9h3abOJCek3a6fhVHT0nAD1jVu9bL667pdUczGJXouUq8KsibDwSnO0Gy79Uo9wLr3qicTaia5DquziamWpMOZ4tuUxfwpovVJvmCBZ19EjiaEM/0?wx_fmt=jpeg
-建议：
-  - 放宽 _lib.post_download_filter 阈值后再跑 complete
-  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_940_100多元买全新锐捷飞牛圣体？这配置到底能不能捡？/img_1.jpg 后改"完"

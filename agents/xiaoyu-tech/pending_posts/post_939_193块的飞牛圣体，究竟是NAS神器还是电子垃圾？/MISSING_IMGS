@@ -1,5 +1,0 @@
-all_body_imgs_failed (0 tried) at 2026-06-10 08:23:23
-cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/E9h3abOJCelgE4Dwco6WaPEaYvvqg6Fm2cuibIuicQiak8vy9mia2AnB0LFke2Al1dxRNXovKK1wlWocibrryD1SfnI135getcJ80klY8dgXBCt8/0?wx_fmt=jpeg
-建议：
-  - 放宽 _lib.post_download_filter 阈值后再跑 complete
-  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_939_193块的飞牛圣体，究竟是NAS神器还是电子垃圾？/img_1.jpg 后改"完"

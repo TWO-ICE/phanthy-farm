@@ -1,5 +1,0 @@
-all_body_imgs_failed (0 tried) at 2026-06-10 03:58:56
-cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/afNLf2a8eXEOmibicoQlZAncGm3TODO78dhib5QbvTWMJzeypib7AAQnTdnb4GtrFMq7dic3jTRjIFGAhrNicGJ17uFw/0?wx_fmt=jpeg
-建议：
-  - 放宽 _lib.post_download_filter 阈值后再跑 complete
-  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_482_比mini主机靠谱，这台价格跌至冰点的松下NX2无头笔记本，/img_1.jpg 后改"完"

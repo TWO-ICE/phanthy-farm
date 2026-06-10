@@ -1,5 +1,0 @@
-all_body_imgs_failed (0 tried) at 2026-06-10 08:15:27
-cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/E9h3abOJCenj2YBEqlhWAG5RdW7IveccQUR8g283vEDmSxqLRtibiaN3EMO4W1YIH7N6dr49QDJq3X6NnBmN5ASqicn35DibCyW66lZm3Zqusbo/0?wx_fmt=jpeg
-建议：
-  - 放宽 _lib.post_download_filter 阈值后再跑 complete
-  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_925_170买台15寸触屏收银机？能刷飞牛、能看电视，可玩性还挺高/img_1.jpg 后改"完"

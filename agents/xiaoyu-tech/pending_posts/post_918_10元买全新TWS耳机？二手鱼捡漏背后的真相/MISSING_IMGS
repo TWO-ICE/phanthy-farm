@@ -1,5 +1,0 @@
-all_body_imgs_failed (0 tried) at 2026-06-10 08:11:35
-cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/afNLf2a8eXH1EhbyA2FzNFfQY6yicOOZbPribiboR6gN3ZcV1VlRicMHl3EGwfU9ps2hO3I3ibBFZfXxrQ9A0XZqlqA/0?wx_fmt=jpeg
-建议：
-  - 放宽 _lib.post_download_filter 阈值后再跑 complete
-  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_918_10元买全新TWS耳机？二手鱼捡漏背后的真相/img_1.jpg 后改"完"

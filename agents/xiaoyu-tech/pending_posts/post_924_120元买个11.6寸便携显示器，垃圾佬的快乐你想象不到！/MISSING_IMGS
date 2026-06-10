@@ -1,5 +1,0 @@
-all_body_imgs_failed (0 tried) at 2026-06-10 08:15:02
-cover_url: https://mmbiz.qpic.cn/mmbiz_jpg/E9h3abOJCenDqAhiaU3xZedEW8iaSKHLaTCZ7iaCByjVDGPksGjfQmqIry697jSrriaDR2N69Qk33gBm5hCiaBI2BJJ16KY5lTj9neCtZ5CSpLXY/0?wx_fmt=jpeg
-建议：
-  - 放宽 _lib.post_download_filter 阈值后再跑 complete
-  - 或人工挑选几张图放到 /Users/4paradigm/Documents/phanthy/agents/xiaoyu-tech/pending_posts/post_924_120元买个11.6寸便携显示器，垃圾佬的快乐你想象不到！/img_1.jpg 后改"完"
