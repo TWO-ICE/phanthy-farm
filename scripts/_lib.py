@@ -52,6 +52,12 @@ PROMO_CONTEXT_KEYWORDS = [
     "更多精彩", "推荐阅读", "往期回顾", "热文推荐",
 ]
 
+# 结尾标识符（只在图片**后方**出现时才排除）
+END_MARKERS = [
+    "---END---", "--- END ---", "---end---", "--- end ---",
+    "【END】", "（完）", "(完)",
+]
+
 # === SSL context（避免 wemprss 证书问题） ===
 _ctx = ssl.create_default_context()
 _ctx.check_hostname = False
@@ -314,6 +320,11 @@ def parse_image_urls_from_html(html_content: str) -> list:
         # 去HTML标签，只留文字
         context_text = re.sub(r'<[^>]+>', ' ', context)
         is_promo = any(kw in context_text for kw in PROMO_CONTEXT_KEYWORDS)
+        # 结尾标识符：只检查图片后方
+        after_img = html_content[m.end():min(len(html_content), m.end() + 300)]
+        after_text = re.sub(r'<[^>]+>', ' ', after_img)
+        if not is_promo and any(kw in after_text for kw in END_MARKERS):
+            is_promo = True
         images.append({
             "url": url,
             "alt": alt_m.group(1) if alt_m else "",
@@ -341,6 +352,11 @@ def parse_image_urls_from_markdown(md_content: str) -> list:
         # 去掉其他图片链接，只留文字
         context_text = re.sub(r'!\[[^\]]*\]\([^\)]+\)', '', context)
         is_promo = any(kw in context_text for kw in PROMO_CONTEXT_KEYWORDS)
+        # 结尾标识符：只检查图片后方
+        after_img = md_content[m.end():min(len(md_content), m.end() + 300)]
+        after_text = re.sub(r'!\[[^\]]*\]\([^\)]+\)', '', after_img)
+        if not is_promo and any(kw in after_text for kw in END_MARKERS):
+            is_promo = True
         images.append({
             "url": url,
             "alt": alt,
