@@ -68,4 +68,4 @@
 
 在这场涉及数千亿美元市值的商业博弈中，没有真正的赢家，只有关于利益分配的永恒谈判。
 
-> 💡 深度启发自：[这7款iPhone到底在中国还卖不卖？事情可能没这么简单](https://www.nbd.com.cn/articles/2018-12-12/1331002.html)
+> 💡 深度启发自：[这7款iPhone到底在中国还卖不卖？事情可能没这么简单](https://mp.weixin.qq.com/s/kDX8_rvFCjfgrLJaaI84bA)
