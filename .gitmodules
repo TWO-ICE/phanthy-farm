@@ -1,0 +1,3 @@
+[submodule "article-deslop"]
+	path = article-deslop
+	url = https://github.com/TWO-ICE/article-deslop.git
