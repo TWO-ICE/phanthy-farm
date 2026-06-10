@@ -44,6 +44,14 @@ URL_EXCLUDE_KEYWORDS = [
     "biz_tpc", "reward", "zan", "like",                   # 推广图
 ]
 
+# 上下文推广关键词（出现在图片前后文中的 → 排除该图片）
+PROMO_CONTEXT_KEYWORDS = [
+    "合作联系", "加微信", "加个人微信", "扫码关注", "关注公众号",
+    "长按关注", "二维码关注", "关注我们", "商务合作", "投稿合作",
+    "联系小编", "加入社群", "进群", "添加好友", "微信号",
+    "更多精彩", "推荐阅读", "往期回顾", "热文推荐",
+]
+
 # === SSL context（避免 wemprss 证书问题） ===
 _ctx = ssl.create_default_context()
 _ctx.check_hostname = False
@@ -103,7 +111,10 @@ def filter_candidates(images: list, cover_url: str = "") -> list:
             ib = urlparse(url).path.split('/')[-1].split('?')[0]
             if ib and ib == cover_basename:
                 continue
-        # 4. 打分
+        # 4. 上下文推广过滤
+        if img.get('_promo'):
+            continue
+        # 5. 打分
         s = score_image(img, pos)
         out.append((s, pos, img))
     # 按分数降序，position 升序
@@ -283,7 +294,8 @@ def download_and_crop(url: str, dst: Path, crop_bottom: float = CROP_BOTTOM) -> 
 # 工具函数
 # ============================================================
 def parse_image_urls_from_html(html_content: str) -> list:
-    """从 content_html 里解析所有 <img>，返回 [{url, alt, width, height}, ...]"""
+    """从 content_html 里解析所有 <img>，返回 [{url, alt, width, height}, ...]
+    自动过滤：推广上下文关键词附近的图片排除（_promo=True）。"""
     if not html_content:
         return []
     import html as html_lib
@@ -294,11 +306,47 @@ def parse_image_urls_from_html(html_content: str) -> list:
         alt_m = re.search(r'alt="([^"]*)"', attrs)
         w_m = re.search(r'width="(\d+)"', attrs)
         h_m = re.search(r'height="(\d+)"', attrs)
+        # 上下文推广检测：取图片前后200字符
+        pos = m.start()
+        ctx_start = max(0, pos - 200)
+        ctx_end = min(len(html_content), m.end() + 200)
+        context = html_content[ctx_start:ctx_end]
+        # 去HTML标签，只留文字
+        context_text = re.sub(r'<[^>]+>', ' ', context)
+        is_promo = any(kw in context_text for kw in PROMO_CONTEXT_KEYWORDS)
         images.append({
             "url": url,
             "alt": alt_m.group(1) if alt_m else "",
             "width": int(w_m.group(1)) if w_m else None,
             "height": int(h_m.group(1)) if h_m else None,
+            "_promo": is_promo,
+        })
+    return images
+
+
+def parse_image_urls_from_markdown(md_content: str) -> list:
+    """从 Markdown 内容解析所有 ![](url)，返回 [{url, alt}, ...]
+    自动检测上下文推广关键词，标记 _promo=True。"""
+    if not md_content:
+        return []
+    images = []
+    for m in re.finditer(r'!\[([^\]]*)\]\((https?://[^\s\)]+)\)', md_content):
+        url = m.group(2)
+        alt = m.group(1)
+        # 上下文推广检测：取图片前后200字符
+        pos = m.start()
+        ctx_start = max(0, pos - 200)
+        ctx_end = min(len(md_content), m.end() + 200)
+        context = md_content[ctx_start:ctx_end]
+        # 去掉其他图片链接，只留文字
+        context_text = re.sub(r'!\[[^\]]*\]\([^\)]+\)', '', context)
+        is_promo = any(kw in context_text for kw in PROMO_CONTEXT_KEYWORDS)
+        images.append({
+            "url": url,
+            "alt": alt,
+            "width": None,
+            "height": None,
+            "_promo": is_promo,
         })
     return images
 
