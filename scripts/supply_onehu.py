@@ -3,7 +3,7 @@
 按 TUNING.md 三步流程：仿写 → 封面 → 正文图片，每篇三件套完整再继续。
 用法: python3 supply_onehu.py --count 20
 """
-import argparse, os, sys, subprocess, shutil
+import argparse, os, sys, subprocess
 
 REPO = "/Users/4paradigm/Documents/phanthy"
 
@@ -72,7 +72,7 @@ def main():
     parser.add_argument("--max-words", type=int, default=0, help="最大字数限制，0=不限")
     args = parser.parse_args()
 
-    agent_path = resolve_agent_dir(REPO, "onehu-zhihu")
+    agent_path = os.path.join(REPO, "agents", "onehu-zhihu")
 
     print(f"🚀 知乎盐选素材一条龙 - 补充 {args.count} 篇")
     print(f"   流程: salt_rewrite → cover_generator → body_image_generator")
@@ -123,11 +123,6 @@ def main():
         if verify_post(post_full):
             print(f"\n  ✅ 三件套完整！")
             success += 1
-            # 删掉已处理的 draft
-            draft_full = os.path.join(agent_path, "draft", folder_name)
-            if os.path.isdir(draft_full):
-                shutil.rmtree(draft_full)
-                print(f"  🗑️ 已删除 draft: {folder_name[:50]}")
         else:
             print(f"\n  ❌ 三件套不完整")
             failed += 1
