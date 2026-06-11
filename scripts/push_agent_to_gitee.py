@@ -24,7 +24,10 @@ AGENTS_ROOT = Path('/Users/4paradigm/Documents/phanthy/agents')
 REPOS_ROOT = Path('/Users/4paradigm/Documents/phanthy/repos')
 
 # 过滤规则：这些目录/文件绝不入仓
-EXCLUDE_DIRS = {'draft', 'archived', 'pending_posts', '.DS_Store', 'repos'}
+EXCLUDE_DIRS = {'draft', 'archived', 'pending_posts', '.DS_Store', 'repos', 'sources'}
+
+# Gitee 仓里只放 post/，其它一律过滤
+INCLUDED_PATHS = {'post'}
 
 
 def gitee_create_repo(slug: str) -> bool:
@@ -46,7 +49,7 @@ def gitee_create_repo(slug: str) -> bool:
     if r.status_code == 201:
         print(f'[GITEE] 创建仓库: {repo_name}')
         return True
-    elif r.status_code == 422 and 'exists' in r.text.lower():
+    elif r.status_code == 422 and ('exists' in r.text.lower() or '已存在' in r.text):
         print(f'[GITEE] 仓库已存在: {repo_name}')
         return True
     else:
@@ -55,9 +58,9 @@ def gitee_create_repo(slug: str) -> bool:
 
 
 def build_filtered_copy(agent_dir: Path, workdir: Path):
-    """把 agent_dir 的内容（排除 EXCLUDE_DIRS）拷贝到 workdir。"""
+    """Gitee 仓里只放 post/，其它全部过滤。"""
     for item in agent_dir.iterdir():
-        if item.name in EXCLUDE_DIRS:
+        if item.name not in INCLUDED_PATHS:
             continue
         if item.name.startswith('.'):
             continue
