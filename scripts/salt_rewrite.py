@@ -30,7 +30,7 @@ REPO = Path(os.environ.get("PHANTHY_REPO", "/Users/4paradigm/Documents/phanthy")
 PROVIDERS = {
     "glm-4.7": {
         "base_url": "https://open.bigmodel.cn/api/coding/paas/v4",
-        "api_key": "a74d59e68d9a45e68f477ff82402a9f9.LyIM3CAlZoYPE8Ii",
+        "api_key": "bc4d14f45c094a5a98aa7bf4b43487e0.B34VTroSdq4zFG4e",
     },
     "MiniMax-M2.7": {
         "base_url": "https://api.minimaxi.com/v1",
@@ -189,7 +189,8 @@ def call_llm(system_prompt, user_prompt, model=None, temperature=0.7, max_tokens
                   f"content={len(content)}chars", flush=True)
         except Exception as e:
             last_err = e
-            print(f"  ⚠️ LLM call failed (attempt {attempt}): {e}", flush=True)
+            err_body = resp.text[:200] if hasattr(resp, 'text') else ''
+            print(f"  ⚠️ LLM call failed (attempt {attempt}): {e} | body: {err_body}", flush=True)
 
         if attempt < retries:
             time.sleep(5 * attempt)
@@ -329,8 +330,12 @@ def rewrite_folder(agent_path, folder_name, model=None, dry_run=False):
     if len(chunks) > 1:
         print(f"  ✨ 最终润色（消除拼接痕迹）...")
         merge_prompt = FINAL_MERGE_PROMPT.format(total_chunks=len(chunks))
-        merged = call_llm(merge_prompt, merged, model=model, temperature=0.5, max_tokens=131072)
-        print(f"  📊 润色后总字数: {len(merged)}")
+        try:
+            merged = call_llm(merge_prompt, merged, model=model, temperature=0.5, max_tokens=131072)
+            print(f"  📊 润色后总字数: {len(merged)}")
+        except Exception as e:
+            print(f"  ⚠️ 润色失败（{e}），使用拼接结果直接输出")
+            print(f"  📊 拼接总字数: {len(merged)}")
     
     # 清理分块残留：去掉标题后紧跟的孤立编号标题（如 "# 1"、"# 2"）
     merged = re.sub(r'\n#\s+\d{1,2}\s*\n', '\n', merged)
