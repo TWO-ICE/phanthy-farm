@@ -53,6 +53,19 @@ CHUNK_THRESHOLD = 6000  # 原文超过此字数才分块
 #  加载外部资源
 # ═══════════════════════════════════════════════════════════════
 
+
+def resolve_agent_dir(repo, agent_name):
+    """自动匹配带序号的agent目录，如 onehu-zhihu → 01_onehu-zhihu"""
+    agents_dir = os.path.join(repo, "agents")
+    # 精确匹配
+    if os.path.isdir(os.path.join(agents_dir, agent_name)):
+        return os.path.join(agents_dir, agent_name)
+    # 带序号匹配
+    for d in os.listdir(agents_dir):
+        if d.endswith("_" + agent_name) or d == agent_name:
+            return os.path.join(agents_dir, d)
+    return os.path.join(agents_dir, agent_name)
+
 def load_banned_words():
     """加载禁用词表，返回（禁用词列表, 替换映射）"""
     banned_file = DESLOP_DIR / "references" / "banned-words.md"
@@ -745,7 +758,7 @@ def main():
                         help="跳过去AI味最终 pass（节省一次LLM调用）")
     args = parser.parse_args()
 
-    agent_path = os.path.join(REPO, "agents", args.agent)
+    agent_path = resolve_agent_dir(REPO, args.agent)
     draft_dir = os.path.join(agent_path, "draft")
 
     if not os.path.isdir(draft_dir):
