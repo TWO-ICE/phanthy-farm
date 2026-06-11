@@ -1,0 +1,59 @@
+# 宝宝摸小JJ、夹腿、蹭被子，要制止吗？答案跟你想的不一样
+
+![封面图](https://mmbiz.qpic.cn/sz_mmbiz_jpg/tGtmpweWiaN3bB77bE6KNia06hbsH1FcxsPJrdPqc5TUEaVOnic8n7iccDNJ2icQdxpxqUFTaEwiaZia0tMpDf3XIOibIA/0?wx_fmt=jpeg)
+
+> 原文链接：https://mp.weixin.qq.com/s/LZMlTWXQBnOO5c-0_av-9w
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/FF2OYjRxqc1zq2Mgyh5hnW29VF4yclLanDn8Z3lHZAYxqc0w9OxTw5etTSMUecialVTk1KCcLImrVaumKhQ71Ng/640?wx_fmt=png)
+
+上次，咱们发了关于女宝夹腿的科普文后，不少家长在留言区问到**男宝摸生****殖器的问题：**
+
+
+![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/tGtmpweWiaN0pokIFv2rhVjz9IIvwOmyogYvIgeJ5lulHYT7DGSNLY9T2lAHEkT8XJhHNiaNia6mBFHiaic7xJRXqVg/640?wx_fmt=jpeg)
+
+
+男宝爱蹭小鸡鸡这事儿，真是让老母亲尴尬又着急啊，甚至担心是不是性早熟了：
+
+![图片](https://mmbiz.qpic.cn/mmbiz_jpg/FF2OYjRxqc0NVf80CpZPiaphpicXFBLcEVRqsQsZtlerYcMBXHyJpQwj9YsC6feDrHxibgUuVRgfibAHGDMOryjWnQ/640?wx_fmt=jpeg)
+
+孩子爱摸生殖器、夹腿、蹭被子怎么办？嗯，是个正经话题，咱们好好聊聊。
+
+
+**孩子爱摸生殖器，很正常！**
+
+是的，你没有看错。孩子摸生殖器，只是他们探索自己身体的一个正常过程，**这和他们探索自己的手脚、鼻子、嘴巴、头发是一样一样的。****只不过，那个部位是生殖器而已。**稍微有点不同的是：生殖器的神经非常丰富，触摸后孩子会觉得很舒服，所以更愿意去尝试。但这跟成人的性欲、性行为并没啥关系，其实就和挖鼻孔、吃脚趾一样，感觉爽，就去干了。很单纯！
+
+![图片](https://mmbiz.qpic.cn/mmbiz_jpg/z7kZjMoQ3yHjibhBKxIzEIWQCpoicMKoZvqmvk26o4psnnft1FEqUozhnQeKtxKNMqr31sed1LHDShRtHmq3U3xQ/640?wx_fmt=jpeg)
+
+大家可以安心的是：**探索生殖器的行为并不会引起身体和精神上的损害，也跟“性早熟”没什么关系。**所以千万别太惊慌，更不要用粗暴地用打手等方式去制止孩子，或者给孩子贴上“羞羞”“有问题”的标签。这样反而可能会让孩子把“性愉悦”和“罪恶感”联系起来，对孩子的性健康不利，甚至影响他们成年后的婚姻幸福。
+
+
+**忽视，就是最好的回应**
+
+那看到孩子摸生殖器，不能打骂不能阻止，就随他摸？如果孩子是在自己房间、没有外人在场的情况下摸，那么答案是：**是的！忽视就是最好的回应。******一惊一乍，经常阻止，反倒会让孩子更想去做这件事。相反，淡定一点，孩子也许就平顺地度过了这个阶段，自然而然地就停止了。
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/FF2OYjRxqc0NVf80CpZPiaphpicXFBLcEVickdhokIOLSOLOKeKSsJxD2I9qy33jbXWr2e02IeYLbU6NARVCl3Atw/640?wx_fmt=png)
+
+
+但如果是公共场合，咱们可以试试**转移注意力**。注意：一定要淡定！可以装作没看到孩子的动作，去邀请 ta 看绘本/下楼玩/吃点心……如果出现了下面这些情况，那家长们就该长个心眼了：**×** **频繁摸**孩子沉溺于刺激生殖器，吃奶也在弄，玩耍也在弄，坐车也在弄……那就要看看是不是别的原因了。是不是碰到了什么问题，紧张、压力大、受到的关注少了？是不是生殖器有什么不舒服，有没有长疹子、红肿、分泌物不正常？**如果发现私处有异常，及时带娃看医生。**
+
+![图片](https://mmbiz.qpic.cn/mmbiz_jpg/FF2OYjRxqc0NVf80CpZPiaphpicXFBLcEVdZ02ntklL9jGtoajZFI4Pib9qbwtfRCJXb0OY3PFtpRdyU2lU2ic2NSg/640?wx_fmt=jpeg)
+
+**× ****危险摸**如果是大点的宝宝，除了告诉他们界限感（只能在私下做）之外，家长还要告诉他们，**不可以弄伤自己的生殖器。**如果要用手摸，摸之前要把手洗干净。如果不洗干净手，手上的致病菌就会通过触摸带到生殖器里去，容易引起感染。之前还有过不少这类的新闻：*男宝贪玩把小铁环套在自己的生殖器上，女宝往阴道里塞东西……*
+
+
+![图片](https://mmbiz.qpic.cn/mmbiz_jpg/FF2OYjRxqc0NVf80CpZPiaphpicXFBLcEVM1hcaWSOShibMIJreU7TWz1k9H6wx42RDCJpjfZMfWSQjibibxI4GTBLQ/640?wx_fmt=jpeg)
+
+
+这些都是非常危险的、对生殖器有伤害的行为，家长一定要明确告诉孩子不能做。**× ****互相摸**宝宝上了幼儿园后，可能会出于好奇，和小伙伴玩“扮医生”的游戏，互相看或者摸生殖器。如果发现孩子正在玩这个游戏，看护人（老师或家长）应该喊停，但需要遵循三个原则：**1、不可以打骂羞辱；**
+
+**2、告诉孩子停止这个游戏；**
+
+**3、对孩子进行保护身体隐私的教育（哪些地方不可以随便让人摸或摸别人）**
+
+另外提个醒，要是玩这个游戏的孩子处于同样的年龄和同等的发展阶段，一般是无害的。需要警惕的是不同年龄的孩子（譬如间隔 3 岁以上）一起玩这个游戏，避免发生性侵行为。
+
+
+![图片](https://mmbiz.qpic.cn/mmbiz_gif/z7kZjMoQ3yHjibhBKxIzEIWQCpoicMKoZv9J37PxXWNTKndmTEHAJzNHLfmz70RzCG2ic1CrGibDzqeMEIQ9z9Cd1A/640?wx_fmt=gif)
+
+看完今天的文章，大家有没有安心一些？觉得文章有帮助的话，点点【赞】和【在看】吧！还有什么疑问，欢迎在评论区留言哦~*文章所用图片均来自网络，与正文无关**文章参考资料：**1.《从尿布到约会》2.http://www.fhs.gov.hk/tc_chi/health_info/faq/child_health/PD1_4_4_6.html3.https://www.healthychildren.org/English/ages-stages/gradeschool/puberty/Pages/Masturbation.aspx4.https://www.mayoclinic.org/healthy-lifestyle/sexual-health/in-depth/sex-education/art-20044104 5.http://kidshealth.org/en/parents/development.html#

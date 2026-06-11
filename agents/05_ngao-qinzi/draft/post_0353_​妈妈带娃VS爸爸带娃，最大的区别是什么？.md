@@ -1,0 +1,17 @@
+# ​妈妈带娃VS爸爸带娃，最大的区别是什么？
+
+![封面图](https://mmbiz.qpic.cn/sz_mmbiz_jpg/tGtmpweWiaN1NBc4mzice7qoKiarhXsxWXYJ9SALuwGvyd4bGe2Jq9PtVbZgOxia2VCtbBhkcJOic0D9c0dUS4KRTOA/0?wx_fmt=jpeg)
+
+> 原文链接：https://mp.weixin.qq.com/s/VwSCt1qKHkHrG-zNW9qtjg
+
+妈妈带娃VS爸爸带娃，最大的区别是什么？一起来看看吧！👇
+
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/nuqSmia8OqobpLJM0ExJxSPcbh0ibB6D5I4NBntImzSVAoRW97MWg47zoka5EJJdpoIetyibgKdibrHk8ic9PrSLZLQ/640?wx_fmt=png&wx_co=1)
+
+ 小贴士：视频播放有声音，如果孩子睡着了，建议戴上耳机或换个地方再看。
+
+
+![图片](https://mmbiz.qpic.cn/sz_mmbiz_gif/tGtmpweWiaN1VIiaDiccwnKN9icLfHMcGO8fpqxhlBbWuFQ6xNIQZQnvuiajTvYyq49EHAPZxvjeLibiabzlejyhXSzxw/640?wx_fmt=gif&wx_co=1)
+
+各位妈妈们，咱们**【糕爸威廉】**视频号每天都在更新，**有丰富的早教游戏、亲子游戏，有爸爸带娃的独特视角，也有婚姻、家庭的话题讨论……**欢迎叫上老公，一起关注起来哦！
